@@ -1,26 +1,41 @@
-# Pipeline: /novosite
-> Executado pelo [[orquestrador]]. Cria um site profissional com confirmação em cada fase. Segue o [[PROTOCOLO]].
+# Pipeline: /novosite (nível sênior)
+> Conduzido pelo [[orquestrador]]. Recebe material bruto, entende, pesquisa, critica, planeja, e eu aprovo o blueprint antes de codar. Multipágina por padrão. Ver [[PROTOCOLO]] · [[PROTOCOLO-CRITICA]] · [[INDEX]].
 
-## FASE 0 — Briefing
-Se o dono não deu detalhes, chamar [[briefing-cliente]] para coletar: nome do negócio, ramo, objetivo do site (vender/institucional/captar lead), público, referências visuais, precisa de SEO?, precisa de área logada/sistema?, orçamento/prazo, domínio/hospedagem.
-Criar slug e a pasta `_ai/projects/<slug>/` com `estado.md` e `briefing.md`.
+## Como eu uso
+Digito /novosite e jogo o material que tiver: descrição do cliente, URL do site atual, LinkedIn, fotos, links, redes. Não preciso organizar — a IA entende.
 
-## FASE 1 — Arquitetura (chamar [[arquiteto-frontend]])
-Decide: tipo (institucional / conteúdo / app), stack (do [[Arsenal-Web-Dev]] e do [[stack-padrao]]), estrutura de pastas, integrações (form, pagamento, CMS).
-Grava `_ai/projects/<slug>/decisao-arquitetura.md` e registra ADR em `_ai/decisions/`.
-**PAUSA → dono aprova.**
+## ETAPA 1 — Entender (sem me cobrar organização)
+[[analista-entrada]] processa TODO o material → entrada.md (ramo, identidade visual com hex, objetivo, público, requisitos, lacunas).
 
-## FASE 2 — Design (chamar [[designer-ui]])
-Define: tom visual, paleta (com hex), escala tipográfica, grid, tokens CSS (custom properties), referência de componentes. Gera `design.md` com os tokens prontos pra copiar.
-**PAUSA → dono aprova.**
+## ETAPA 2 — Pesquisar
+[[pesquisador]] estuda o negócio e o mercado (ferramentas grátis) → pesquisa.md (o que a empresa faz, concorrentes, o que converte no setor, oportunidade).
 
-## FASE 3 — Implementação
-Seguir a skill certa: institucional → [[novo-site-institucional]]; app → [[novo-app-next]]; conteúdo → landing-astro.
-Codar respeitando arquitetura + tokens do design. Código vai pra pasta do projeto (fora de _ai/ → pedir aprovação pra escrever fora).
-**PAUSA → dono aprova.**
+## ETAPA 3 — Estratégia
+[[estrategista]] define a mensagem nº1, o CTA dominante, a jornada e as provas necessárias → estrategia.md. Foco em primeira impressão e conversão.
 
-## FASE 4 — Auditoria (chamar [[auditor-performance]])
-Roda checklist de perf/SEO/acessibilidade, gera `auditoria.md` em `_ai/outputs/`. Corrige o crítico. Entrega final + instruções de deploy.
+## ETAPA 4 — Críticar e perguntar o essencial
+Os agentes (modo [[PROTOCOLO-CRITICA]]) apontam lacunas. [[briefing-cliente]] me faz só as perguntas que faltam (poucas, objetivas).
 
-## Regra de ouro
-Uma fase por vez. Sempre fazer handoff e esperar "aprovado".
+## ETAPA 5 — BLUEPRINT (eu aprovo aqui)
+Montar UM blueprint completo em _ai/projects/<slug>/blueprint.md:
+- Mapa de páginas (multipágina) e navegação
+- Estrutura seção a seção de cada página
+- Fluxos de clique (card → página de detalhe)
+- Design: consultar [[design-intelligence]] (ui-ux-pro-max) + identidade do cliente → paleta hex, tipografia, espaçamento generoso, tokens :root
+- Mídia: [[midia-hero]] decide vídeo ou imagem + fontes grátis
+- Stack: [[arquiteto-frontend]] (front) + [[arquiteto-backend]] (front vs fullstack + o que falta)
+- Conteúdo: tom (sem lorem ipsum)
+MOSTRAR o blueprint inteiro e PARAR. Eu aprovo UMA vez.
+
+## ETAPA 6 — Implementar (após aprovação)
+Codar o site inteiro seguindo o blueprint, em C:\Projetos\<slug> (fora de _ai/ → pedir aprovação pra escrever fora). Frontend + backend conforme decidido. Mídia com fallback.
+
+## ETAPA 7 — Auditar e entregar
+[[auditor-performance]] roda checklist (Lighthouse ≥90, LCP/CLS/INP, SEO, acessibilidade, responsivo). Entrega + como ver no navegador + deploy.
+
+## REGRAS DE OURO
+- Multipágina por padrão (landing só se pedido).
+- Blueprint aprovado por mim antes de qualquer código.
+- Espaçamento generoso (nunca compacto). Nível Awwwards.
+- Primeira impressão vende o negócio do cliente.
+- Só ferramentas grátis. Nada de copiar conteúdo de terceiros — só estrutura.

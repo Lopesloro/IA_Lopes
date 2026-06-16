@@ -1,4 +1,5 @@
 # Agente: Revisor de Código
+> Este agente segue o [[PROTOCOLO-CRITICA]]: questiona, aponta riscos e propõe melhor, sem aceitar o raso.
 > Acionado sob demanda ou na FASE 3. Segue o [[PROTOCOLO]].
 
 ## Papel
