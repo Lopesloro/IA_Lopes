@@ -2,7 +2,21 @@
   "permissions": {
     "allow": [
       "Bash(git init *)",
-      "Bash(git add *)"
+      "Bash(git add *)",
+      "Bash(git commit -m 'Setup inicial do segundo cérebro *)",
+      "Bash(git branch *)",
+      "Bash(git remote *)",
+      "Bash(git push *)",
+      "Bash(gh repo *)",
+      "Bash(gh api *)",
+      "Bash(python -c \"import json,sys; d=json.load\\(sys.stdin\\); [print\\(t['path']\\) for t in d.get\\('tree',[]\\)]\")",
+      "Bash(python -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\('name:',d.get\\('name'\\)\\); print\\('desc:',d.get\\('description'\\)\\); print\\('default_branch:',d.get\\('default_branch'\\)\\); print\\('size_kb:',d.get\\('size'\\)\\); print\\('license:',d.get\\('license',{}\\).get\\('spdx_id'\\) if d.get\\('license'\\) else None\\); print\\('topics:',d.get\\('topics'\\)\\)\")",
+      "Bash(python -c \"import json,sys; d=json.load\\(sys.stdin\\); [print\\(t['type'][:1], t.get\\('size','-'\\), t['path']\\) for t in d.get\\('tree',[]\\)]\")",
+      "Bash(python -c \"import json,sys; d=json.load\\(sys.stdin\\); paths=[t['path'] for t in d.get\\('tree',[]\\)]; tops=sorted\\({p.split\\('/',1\\)[0] for p in paths}\\); print\\('--- TOP-LEVEL ---'\\); [print\\(t\\) for t in tops]; print\\(\\); print\\('--- SKILLS UNDER .claude/skills ---'\\); skills=sorted\\({p.split\\('/'\\)[2] for p in paths if p.startswith\\('.claude/skills/'\\) and len\\(p.split\\('/'\\)\\)>=3}\\); [print\\(s\\) for s in skills]; print\\(\\); print\\('--- TOTAL FILES ---'\\); print\\(sum\\(1 for t in d['tree'] if t['type']=='blob'\\)\\)\")",
+      "Bash(curl *)",
+      "Bash(python -c 'import json,sys; d=json.load\\(sys.stdin\\); paths=[t['\\\\''path'\\\\''] for t in d.get\\('\\\\''tree'\\\\'',[]\\)]; by_skill={}; *)",
+      "Bash(PYTHONIOENCODING=utf-8 python *)",
+      "Bash(git commit -m ' *)"
     ]
   }
 }
